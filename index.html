@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matéria Oculta — Kits de hoodoo prontos para usar</title>
+<meta name="description" content="Kits de rootwork montados à mão, por intenção: vela, óleo, ervas, raízes e guia de uso numa caixa só.">
+<meta name="theme-color" content="#14110F">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --breu:#14110F; --fumo:#2A2420; --fumo-2:#1C1815; --linha:#3A322C;
+  --cera:#EDE4D3; --papel:#F7F1E6; --cera-2:#D6CCBA; --cinza:#A89F90;
+  --latao:#B08D57; --lacre:#7A1F1F; --raiz:#5A3A28;
+  --serif:'IM Fell English', Garamond, 'Times New Roman', serif;
+  --serif-sc:'IM Fell English SC', Garamond, 'Times New Roman', serif;
+  --sans:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --wrap:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--breu);color:var(--cera);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--latao)}
+:focus-visible{outline:2px solid var(--latao);outline-offset:3px}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:32px;padding-right:32px}
+@media (max-width:600px){.wrap{padding-left:20px;padding-right:20px}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sr-only:focus{position:fixed;top:12px;left:12px;width:auto;height:auto;clip:auto;z-index:100;padding:12px 16px;background:var(--papel);color:var(--breu)}
+.kicker{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--latao)}
+
+/* faixa e cabeçalho */
+.faixa{background:var(--lacre);color:var(--papel);text-align:center;padding:10px 20px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.topo{position:sticky;top:0;z-index:20;background:rgba(20,17,15,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--linha)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:82px}
+.marca{display:flex;align-items:center;gap:12px;color:var(--cera)}
+.marca svg{color:var(--latao);flex:none}
+.marca span{font-family:var(--serif-sc);font-size:26px;letter-spacing:.05em}
+.nav{display:flex;gap:28px;font-size:15px}
+.acoes{display:flex;align-items:center;gap:10px}
+.btn-sacola{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:1px solid var(--latao);background:none;color:var(--cera);font-size:14px}
+.btn-sacola:hover{background:var(--fumo)}
+.btn-sacola .qtd{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--lacre);color:var(--papel);font-size:12px;font-weight:600}
+.btn-menu{display:none;width:44px;height:44px;border:1px solid var(--linha);background:none;color:var(--cera);align-items:center;justify-content:center}
+@media (max-width:860px){
+  .btn-menu{display:inline-flex}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--breu);border-bottom:1px solid var(--linha);padding:8px 20px 16px}
+  .nav.aberto{display:flex}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--linha)}
+  .marca span{font-size:22px}
+}
+@media (max-width:420px){.btn-sacola .rotulo{display:none}}
+
+/* hero */
+.hero .wrap{display:flex;flex-wrap:wrap;gap:64px;align-items:center;padding-top:96px;padding-bottom:104px}
+.hero-texto{flex:1 1 460px;display:flex;flex-direction:column;gap:28px}
+.hero h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(2.8rem,6vw,4.2rem);line-height:1.02}
+.hero h1 em{color:var(--latao)}
+.hero p{margin:0;max-width:520px;font-size:1.15rem;line-height:1.6;color:var(--cera-2)}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;font-size:16px;border:1px solid transparent}
+.btn-lacre{background:var(--lacre);color:var(--papel);font-weight:600}
+.btn-lacre:hover{background:#8E2828;color:var(--papel)}
+.btn-linha{border-color:var(--cera);color:var(--cera)}
+.btn-linha:hover{background:var(--cera);color:var(--breu)}
+.hero-visual{flex:1 1 380px;display:flex;justify-content:center}
+.vitrine{position:relative;width:100%;max-width:440px;height:480px;background:var(--fumo);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.vitrine .halo{position:absolute;inset:0;width:100%;height:100%;color:var(--latao);opacity:.6}
+.rotulo-kit{position:relative;width:250px;background:var(--papel);color:var(--breu);padding:10px;transform:rotate(-3deg);box-shadow:0 30px 60px rgba(0,0,0,.55)}
+.rotulo-kit .selo{position:absolute;top:-34px;right:-40px;width:112px;height:112px;transform:rotate(14deg);z-index:2}
+.rotulo-miolo{position:relative;padding:22px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.moldura{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.rotulo-miolo .num{font-family:var(--mono);font-size:10px;letter-spacing:.3em}
+.rotulo-miolo .nome{font-family:var(--serif-sc);font-size:34px;line-height:.95}
+.rotulo-miolo .orig{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--raiz)}
+.rotulo-miolo .contem{font-family:var(--mono);font-size:9px;line-height:1.7;letter-spacing:.08em}
+@media (max-width:600px){.hero .wrap{padding-top:56px;padding-bottom:64px;gap:48px}.vitrine{height:400px}}
+
+/* kits */
+.kits{background:var(--cera);color:var(--breu)}
+.kits .wrap{padding-top:96px;padding-bottom:96px;display:flex;flex-direction:column;gap:48px}
+.kits-topo{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;border-bottom:1px solid var(--breu);padding-bottom:20px}
+.kits-topo .kicker{color:var(--raiz)}
+.kits h2{margin:10px 0 0;font-family:var(--serif-sc);font-weight:400;font-size:clamp(2.2rem,4vw,3rem);line-height:1}
+.filtros{display:flex;flex-wrap:wrap;gap:8px}
+.filtro{min-height:40px;padding:0 16px;border:1px solid var(--breu);background:none;color:var(--breu);font-size:14px}
+.filtro[aria-pressed="true"]{background:var(--breu);color:var(--cera)}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.kit{background:var(--papel);border:1px solid var(--breu);display:flex;flex-direction:column}
+.kit-capa{position:relative;background:var(--breu);color:var(--cera);height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:0 24px}
+.kit-capa .moldura{top:14px;left:14px;width:calc(100% - 28px);height:calc(100% - 28px)}
+.kit-capa .num{font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:var(--latao)}
+.kit-capa h3{margin:0;font-family:var(--serif-sc);font-weight:400;font-size:34px;text-align:center;line-height:1}
+.kit-capa .orig{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--cinza)}
+.kit-corpo{padding:22px;display:flex;flex-direction:column;gap:14px;flex:1}
+.kit-corpo p{margin:0;font-size:15px;line-height:1.55;color:var(--linha)}
+.kit-corpo .contem{font-family:var(--mono);font-size:11px;line-height:1.7;letter-spacing:.06em;text-transform:uppercase;color:var(--raiz)}
+.kit-pe{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid #CFC5B3}
+.preco{font-weight:600;font-size:18px}
+.btn-add{min-height:44px;padding:0 18px;background:var(--lacre);color:var(--papel);border:0;font-weight:600;font-size:14px}
+.btn-add:hover{background:#8E2828}
+.btn-add.ok{background:var(--breu)}
+
+/* como funciona */
+.como .wrap{padding-top:72px;padding-bottom:104px;display:flex;flex-direction:column;gap:48px}
+.divisor{display:flex;justify-content:center;color:var(--latao)}
+.como h2,.raizes h2{margin:10px 0 0;font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4vw,3rem);line-height:1.05}
+.como h2 em{color:var(--latao)}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;margin:0;padding:0;list-style:none}
+.passos li{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--latao);padding-top:20px}
+.passos .romano{font-family:var(--serif-sc);font-size:56px;line-height:1;color:var(--latao)}
+.passos h3{margin:0;font-size:20px;font-weight:600}
+.passos p{margin:0;font-size:16px;line-height:1.6;color:var(--cera-2)}
+
+/* raízes */
+.raizes{background:var(--fumo)}
+.raizes .wrap{padding-top:104px;padding-bottom:104px;display:flex;flex-wrap:wrap;gap:56px;align-items:center}
+.raizes-simbolo{position:relative;flex:1 1 280px;display:flex;justify-content:center;align-items:center;min-height:340px;color:var(--latao)}
+.raizes-simbolo .hexa{position:absolute;opacity:.35}
+.raizes-simbolo .simbolo{position:relative}
+.raizes-texto{flex:2 1 480px;display:flex;flex-direction:column;gap:20px}
+.raizes-texto h2{font-size:clamp(2rem,3.5vw,2.6rem);line-height:1.1}
+.raizes-texto p{margin:0;font-size:17px;line-height:1.7;color:var(--cera-2);max-width:65ch}
+.mais{align-self:flex-start;border:0;background:none;color:var(--latao);font-weight:600;min-height:44px;padding:0}
+.mais:hover{color:var(--cera)}
+.leituras{display:none;margin:0;padding:18px 20px;border-left:2px solid var(--latao);background:var(--fumo-2);color:var(--cera-2);font-size:15px;line-height:1.7}
+.leituras.aberto{display:block}
+
+/* almanaque */
+.almanaque .wrap{padding-top:40px;padding-bottom:96px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;justify-content:space-between}
+.almanaque-texto{flex:1 1 420px;display:flex;flex-direction:column;gap:12px}
+.almanaque h2{margin:0;font-family:var(--serif-sc);font-weight:400;font-size:clamp(2rem,3.5vw,2.6rem)}
+.almanaque-texto p{margin:0;font-size:17px;line-height:1.6;color:var(--cera-2)}
+.form{flex:1 1 420px;display:flex;flex-direction:column;gap:8px}
+.form label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cinza)}
+.form-linha{display:flex;flex-wrap:wrap;gap:10px}
+.form input{flex:1 1 240px;min-height:52px;padding:0 16px;background:transparent;border:1px solid #8C8375;color:var(--cera);font-family:var(--sans);font-size:16px}
+.form input[aria-invalid="true"]{border-color:#C25B4E}
+.form button{min-height:52px;padding:0 26px;background:var(--latao);color:var(--breu);border:0;font-weight:600;font-size:16px}
+.form button:hover{background:#C4A06A}
+.form-msg{min-height:22px;font-size:14px;color:var(--cera-2)}
+.form-msg.erro{color:#E08A7E}
+
+/* rodapé */
+.rodape{border-top:1px solid var(--linha)}
+.rodape .wrap{padding-top:48px;padding-bottom:48px;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+.rodape .nome{font-family:var(--serif-sc);font-size:24px}
+.rodape p{margin:10px 0 0;max-width:420px;font-size:13px;line-height:1.6;color:var(--cinza)}
+.rodape nav{display:flex;flex-wrap:wrap;gap:24px;font-size:14px}
+
+/* sacola */
+.veu{position:fixed;inset:0;z-index:40;background:rgba(10,8,7,.6);opacity:0;pointer-events:none;transition:opacity .2s}
+.veu.aberto{opacity:1;pointer-events:auto}
+.sacola{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(420px,100%);background:var(--papel);color:var(--breu);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .25s ease}
+.sacola.aberto{transform:none}
+.sacola-topo{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--breu)}
+.sacola-topo h2{margin:0;font-family:var(--serif-sc);font-weight:400;font-size:28px}
+.fechar{width:44px;height:44px;border:1px solid var(--breu);background:none;color:var(--breu);font-size:20px;line-height:1}
+.sacola-lista{flex:1;overflow:auto;padding:8px 24px;margin:0;list-style:none}
+.item{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:16px 0;border-bottom:1px solid #CFC5B3}
+.item .nome{font-family:var(--serif-sc);font-size:22px;line-height:1.1}
+.item .sub{font-family:var(--mono);font-size:12px;color:var(--raiz)}
+.item .valor{font-weight:600;text-align:right}
+.qtd-ctrl{display:flex;align-items:center;gap:6px}
+.qtd-ctrl button{width:36px;height:36px;border:1px solid var(--breu);background:none;color:var(--breu);font-size:16px}
+.qtd-ctrl output{min-width:24px;text-align:center;font-weight:600}
+.remover{border:0;background:none;color:var(--lacre);font-size:13px;text-decoration:underline;justify-self:end;align-self:center;min-height:36px}
+.vazia{padding:40px 0;text-align:center;color:var(--raiz)}
+.vazia p{margin:0 0 16px}
+.sacola-pe{padding:20px 24px 24px;border-top:1px solid var(--breu);display:flex;flex-direction:column;gap:12px}
+.total{display:flex;justify-content:space-between;font-size:18px;font-weight:600}
+.sacola-pe .btn{width:100%}
+.aviso{font-size:13px;line-height:1.5;color:var(--raiz);min-height:20px}
+
+/* aviso flutuante */
+.toast{position:fixed;left:50%;bottom:24px;z-index:60;transform:translate(-50%,20px);opacity:0;background:var(--breu);color:var(--cera);border:1px solid var(--latao);padding:14px 20px;font-size:15px;transition:opacity .2s,transform .2s;pointer-events:none;max-width:calc(100% - 40px)}
+.toast.ver{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="simbolo" viewBox="0 0 140 140">
+      <g fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M80.07 12.88 A58 58 0 1 1 59.93 12.88" stroke-width="4.5"/>
+        <ellipse cx="77" cy="13.2" rx="9" ry="5.8" fill="currentColor" stroke="none"/>
+        <path d="M16 70 H124" stroke-width="1.6"/>
+        <g transform="translate(70 70) scale(0.78) translate(-60 -70)" stroke-width="2.4">
+          <path d="M60 14 V126"/><path d="M60 58 L38 36"/><path d="M60 58 L82 36"/><path d="M60 40 L46 24"/><path d="M60 40 L74 24"/>
+          <path d="M60 82 C52 90 44 96 38 104"/><path d="M60 82 C68 90 76 96 82 104"/><path d="M60 100 C56 106 50 112 46 116"/><path d="M60 100 C64 106 70 112 74 116"/>
+          <g fill="currentColor" stroke="none"><circle cx="60" cy="14" r="5"/><circle cx="38" cy="36" r="3.5"/><circle cx="82" cy="36" r="3.5"/><circle cx="46" cy="24" r="3"/><circle cx="74" cy="24" r="3"/><circle cx="60" cy="70" r="5.5"/></g>
+        </g>
+      </g>
+    </symbol>
+    <symbol id="simbolo-reduzido" viewBox="0 0 140 140">
+      <g fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M80.07 12.88 A58 58 0 1 1 59.93 12.88" stroke-width="7"/>
+        <ellipse cx="77" cy="13.2" rx="10" ry="7" fill="currentColor" stroke="none"/>
+        <path d="M16 70 H124" stroke-width="3.5"/>
+        <g transform="translate(70 70) scale(0.78) translate(-60 -70)" stroke-width="4.5">
+          <path d="M60 14 V126"/><path d="M60 58 L38 36"/><path d="M60 58 L82 36"/><path d="M60 82 C52 90 44 96 38 104"/><path d="M60 82 C68 90 76 96 82 104"/>
+          <g fill="currentColor" stroke="none"><circle cx="60" cy="14" r="7"/><circle cx="60" cy="70" r="8"/></g>
+        </g>
+      </g>
+    </symbol>
+    <symbol id="horizonte" viewBox="0 60 200 80">
+      <g fill="none" stroke="currentColor" stroke-width="1.3">
+        <path d="M10 100 H70 M130 100 H190"/><path d="M70 100 Q100 66 130 100 Q100 134 70 100 Z"/><path d="M84 100 Q100 82 116 100 Q100 118 84 100 Z" stroke-width="0.8"/>
+        <g fill="currentColor" stroke="none"><circle cx="100" cy="100" r="3.5"/><circle cx="10" cy="100" r="2.5"/><circle cx="190" cy="100" r="2.5"/></g>
+      </g>
+    </symbol>
+    <symbol id="moldura-kit" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M6 0 H94 A6 6 0 0 0 100 6 V94 A6 6 0 0 0 94 100 H6 A6 6 0 0 0 0 94 V6 A6 6 0 0 0 6 0 Z" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+      <rect x="5" y="6" width="90" height="88" fill="none" stroke="currentColor" stroke-width="0.6" vector-effect="non-scaling-stroke"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="sr-only" href="#kits">Pular para os kits</a>
+<div class="faixa">Envio discreto para todo o Brasil · Guia de uso em cada kit</div>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Matéria Oculta, início">
+      <svg width="42" height="42" aria-hidden="true"><use href="#simbolo-reduzido"/></svg>
+      <span>Matéria Oculta</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#kits">Kits</a>
+      <a href="#como">Como funciona</a>
+      <a href="#raizes">Raízes do hoodoo</a>
+      <a href="#almanaque">Almanaque</a>
+    </nav>
+    <div class="acoes">
+      <button class="btn-sacola" type="button" id="abrir-sacola" aria-controls="sacola" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="rotulo">Sacola</span>
+        <span class="qtd" id="contador" aria-label="0 itens">0</span>
+      </button>
+      <button class="btn-menu" type="button" id="btn-menu" aria-controls="nav" aria-expanded="false" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-texto">
+        <div class="kicker">Kits de rootwork · prontos para usar</div>
+        <h1>O que não se vê <em>também sustenta.</em></h1>
+        <p>Kits de hoodoo montados à mão, por intenção. Vela, óleo, ervas, raízes e um guia passo a passo — tudo medido e reunido numa caixa só.</p>
+        <div class="ctas">
+          <a class="btn btn-lacre" href="#kits">Ver os kits</a>
+          <a class="btn btn-linha" href="#como">Como funciona</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="vitrine">
+          <svg class="halo" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <pattern id="pontos" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.7" fill="currentColor"/></pattern>
+              <radialGradient id="halo-grad"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.4" stop-color="#fff" stop-opacity="0"/><stop offset="0.6" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <mask id="halo-mask"><rect width="200" height="200" fill="url(#halo-grad)"/></mask>
+            </defs>
+            <rect width="200" height="200" fill="url(#pontos)" mask="url(#halo-mask)"/>
+          </svg>
+          <div class="rotulo-kit" role="img" aria-label="Rótulo do kit Nº 03, Abre-Caminhos">
+            <svg class="selo" viewBox="0 0 120 120" aria-hidden="true">
+              <defs><path id="selo-circ" d="M60 60 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs>
+              <circle cx="60" cy="60" r="56" fill="#7A1F1F"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#F7F1E6" stroke-width="1"/>
+              <circle cx="60" cy="60" r="28" fill="none" stroke="#F7F1E6" stroke-width="0.7"/>
+              <text fill="#F7F1E6" font-family="'IBM Plex Mono', monospace" font-size="8" letter-spacing="1.3"><textPath href="#selo-circ">MATÉRIA OCULTA · ROOTWORK DE PRATELEIRA ·</textPath></text>
+              <path d="M60 40 V80 M40 60 H80" stroke="#F7F1E6" stroke-width="1.2"/>
+              <circle cx="60" cy="60" r="3.5" fill="#F7F1E6"/>
+            </svg>
+            <div class="rotulo-miolo">
+              <svg class="moldura" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#14110F"><path d="M5 0 H95 A5 4 0 0 0 100 4 V96 A5 4 0 0 0 95 100 H5 A5 4 0 0 0 0 96 V4 A5 4 0 0 0 5 0 Z" stroke-width="1.5" vector-effect="non-scaling-stroke"/><rect x="4" y="3" width="92" height="94" stroke-width="0.7" vector-effect="non-scaling-stroke"/></svg>
+              <div class="num">Nº 03</div>
+              <svg width="48" height="48" style="color:#7A1F1F" aria-hidden="true"><use href="#simbolo-reduzido"/></svg>
+              <div class="nome">Abre-<br>Caminhos</div>
+              <div class="orig">Road Opener</div>
+              <svg width="180" height="29" viewBox="0 84 200 32" aria-hidden="true" fill="none" stroke="#14110F" stroke-width="1.4"><path d="M10 100 H74 M126 100 H190"/><path d="M74 100 Q100 82 126 100 Q100 118 74 100 Z"/><g fill="#14110F" stroke="none"><circle cx="100" cy="100" r="3.5"/><circle cx="10" cy="100" r="2.5"/><circle cx="190" cy="100" r="2.5"/></g></svg>
+              <div class="contem">VELA · ÓLEO · ERVAS · PÓ · GUIA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kits" id="kits" aria-labelledby="kits-titulo">
+    <div class="wrap">
+      <div class="kits-topo">
+        <div>
+          <div class="kicker">A prateleira</div>
+          <h2 id="kits-titulo">Escolha pela intenção</h2>
+        </div>
+        <div class="filtros" role="group" aria-label="Filtrar kits">
+          <button class="filtro" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+          <button class="filtro" type="button" data-filtro="firmar" aria-pressed="false">Firmar e proteger</button>
+          <button class="filtro" type="button" data-filtro="atrair" aria-pressed="false">Atrair e abrir</button>
+        </div>
+      </div>
+      <div class="grade" id="grade" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="como" id="como" aria-labelledby="como-titulo">
+    <div class="wrap">
+      <div class="divisor"><svg width="280" height="112" aria-hidden="true"><use href="#horizonte"/></svg></div>
+      <div>
+        <div class="kicker">Como funciona</div>
+        <h2 id="como-titulo">Tudo que o trabalho pede, <em>numa caixa só.</em></h2>
+      </div>
+      <ol class="passos">
+        <li><span class="romano" aria-hidden="true">I</span><h3>Escolha a intenção</h3><p>Proteção, prosperidade, abrir caminhos ou limpeza. Cada kit tem um propósito só.</p></li>
+        <li><span class="romano" aria-hidden="true">II</span><h3>Receba a matéria</h3><p>Ingredientes separados, identificados e na medida certa, em embalagem discreta.</p></li>
+        <li><span class="romano" aria-hidden="true">III</span><h3>Siga o guia</h3><p>Um passo a passo ilustrado com o modo de preparo, o momento certo e o descarte.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="raizes" id="raizes" aria-labelledby="raizes-titulo">
+    <div class="wrap">
+      <div class="raizes-simbolo">
+        <svg class="hexa" viewBox="0 0 200 200" width="340" height="340" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round" aria-hidden="true"><circle cx="100" cy="100" r="96"/><path d="M100 8 L179.7 146 H20.3 Z"/><path d="M100 192 L20.3 54 H179.7 Z"/></svg>
+        <svg class="simbolo" width="230" height="230" aria-hidden="true"><use href="#simbolo"/></svg>
+      </div>
+      <div class="raizes-texto">
+        <div class="kicker">Raízes do hoodoo</div>
+        <h2 id="raizes-titulo">Uma tradição com história e com dono.</h2>
+        <p>Hoodoo é uma prática de magia popular criada por comunidades negras do sul dos Estados Unidos, a partir de saberes trazidos da África e misturados a conhecimentos indígenas e europeus sobre plantas e raízes. Respeitamos essa origem: cada guia conta de onde vem o trabalho e indica leituras de autores que vivem a tradição.</p>
+        <button class="mais" type="button" id="btn-leituras" aria-expanded="false" aria-controls="leituras">Ler sobre a tradição</button>
+        <p class="leituras" id="leituras">[Espaço para a lista de leituras recomendadas: livros e autores praticantes da tradição. Preencha antes de publicar.]</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divisor" style="padding-top:64px">
+    <svg viewBox="0 60 200 80" width="280" height="112" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M30 88 L44 112 H16 Z"/><path d="M66 112 L80 88 H52 Z"/><path d="M120 88 L134 112 H106 Z M110 104 H130"/><path d="M156 112 L170 88 H142 Z M146 96 H166"/><path d="M4 100 H8 M88 100 H98 M192 100 H196" stroke-width="0.8"/></svg>
+  </div>
+
+  <section class="almanaque" id="almanaque" aria-labelledby="almanaque-titulo">
+    <div class="wrap">
+      <div class="almanaque-texto">
+        <h2 id="almanaque-titulo">O Almanaque</h2>
+        <p>Uma carta por lua: fases, ervas da estação e novos kits antes de chegarem à prateleira.</p>
+      </div>
+      <form class="form" id="form-almanaque" novalidate>
+        <label for="email">Seu e-mail</label>
+        <div class="form-linha">
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="nome@email.com" aria-describedby="form-msg">
+          <button type="submit">Assinar</button>
+        </div>
+        <div class="form-msg" id="form-msg" role="status"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div>
+      <div class="nome">Matéria Oculta</div>
+      <p>Artigos de uso religioso e esotérico. Não substituem orientação médica, psicológica ou jurídica. Venda para maiores de 18 anos.</p>
+    </div>
+    <nav aria-label="Rodapé">
+      <a href="#">Trocas e devoluções</a>
+      <a href="#">Frete</a>
+      <a href="#">Contato</a>
+      <a href="#">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="veu" id="veu"></div>
+<aside class="sacola" id="sacola" aria-labelledby="sacola-titulo" aria-hidden="true">
+  <div class="sacola-topo">
+    <h2 id="sacola-titulo">Sua sacola</h2>
+    <button class="fechar" type="button" id="fechar-sacola" aria-label="Fechar sacola">×</button>
+  </div>
+  <ul class="sacola-lista" id="sacola-lista"></ul>
+  <div class="sacola-pe">
+    <div class="total"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+    <button class="btn btn-lacre" type="button" id="finalizar">Finalizar compra</button>
+    <div class="aviso" id="aviso-checkout" role="status"></div>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* Catálogo — edite nomes e preços aqui. Os preços são de exemplo para o protótipo. */
+const KITS = [
+  { id: 'protecao', num: 'Nº 01', nome: 'Proteção', original: 'Protection', grupo: 'firmar', preco: 89.90,
+    desc: 'Para firmar a casa e o corpo contra o que vem de fora.', contem: 'Vela preta · óleo · sal e ervas · saquinho de flanela · guia' },
+  { id: 'prosperidade', num: 'Nº 02', nome: 'Prosperidade', original: 'Money Drawing', grupo: 'atrair', preco: 94.90,
+    desc: 'Para atrair dinheiro, clientes e boas oportunidades.', contem: 'Vela verde · óleo · ervas e raízes · pó · guia' },
+  { id: 'abre-caminhos', num: 'Nº 03', nome: 'Abre-Caminhos', original: 'Road Opener', grupo: 'atrair', preco: 89.90,
+    desc: 'Para destravar o que está parado e começar algo novo.', contem: 'Vela · óleo de unção · ervas · pó · guia' },
+  { id: 'limpeza', num: 'Nº 04', nome: 'Limpeza', original: 'Uncrossing', grupo: 'firmar', preco: 79.90,
+    desc: 'Para tirar o peso acumulado e recomeçar limpo.', contem: 'Banho de ervas · vela branca · óleo · guia' }
+];
+
+const brl = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const $ = s => document.querySelector(s);
+const CHAVE = 'materia-oculta:sacola';
+let sacola = {};
+try { sacola = JSON.parse(localStorage.getItem(CHAVE)) || {}; } catch (e) { sacola = {}; }
+const salvar = () => { try { localStorage.setItem(CHAVE, JSON.stringify(sacola)); } catch (e) {} };
+
+/* Vitrine */
+function renderKits(filtro = 'todos') {
+  const grade = $('#grade');
+  grade.innerHTML = '';
+  KITS.filter(k => filtro === 'todos' || k.grupo === filtro).forEach(k => {
+    const el = document.createElement('article');
+    el.className = 'kit';
+    el.innerHTML = `
+      <div class="kit-capa">
+        <svg class="moldura" aria-hidden="true" style="color:#B08D57"><use href="#moldura-kit"/></svg>
+        <div class="num">${k.num}</div>
+        <h3>${k.nome}</h3>
+        <div class="orig">${k.original}</div>
+      </div>
+      <div class="kit-corpo">
+        <p>${k.desc}</p>
+        <div class="contem">${k.contem}</div>
+        <div class="kit-pe">
+          <span class="preco">${brl(k.preco)}</span>
+          <button class="btn-add" type="button" data-id="${k.id}">Adicionar</button>
+        </div>
+      </div>`;
+    grade.appendChild(el);
+  });
+}
+document.querySelectorAll('.filtro').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filtro').forEach(x => x.setAttribute('aria-pressed', x === b));
+  renderKits(b.dataset.filtro);
+}));
+$('#grade').addEventListener('click', e => {
+  const b = e.target.closest('.btn-add');
+  if (!b) return;
+  adicionar(b.dataset.id);
+  b.textContent = 'Adicionado';
+  b.classList.add('ok');
+  setTimeout(() => { b.textContent = 'Adicionar'; b.classList.remove('ok'); }, 1400);
+});
+
+/* Sacola */
+function adicionar(id) {
+  sacola[id] = (sacola[id] || 0) + 1;
+  salvar(); renderSacola();
+  const k = KITS.find(x => x.id === id);
+  toast(`${k.nome} adicionado à sacola.`);
+}
+function alterar(id, delta) {
+  sacola[id] = (sacola[id] || 0) + delta;
+  if (sacola[id] <= 0) delete sacola[id];
+  salvar(); renderSacola();
+}
+function renderSacola() {
+  const lista = $('#sacola-lista');
+  const ids = Object.keys(sacola).filter(id => KITS.some(k => k.id === id));
+  const qtd = ids.reduce((s, id) => s + sacola[id], 0);
+  const total = ids.reduce((s, id) => s + sacola[id] * KITS.find(k => k.id === id).preco, 0);
+  $('#contador').textContent = qtd;
+  $('#contador').setAttribute('aria-label', `${qtd} ${qtd === 1 ? 'item' : 'itens'}`);
+  $('#subtotal').textContent = brl(total);
+  $('#finalizar').disabled = qtd === 0;
+  $('#finalizar').style.opacity = qtd === 0 ? .5 : 1;
+  $('#aviso-checkout').textContent = '';
+  if (!ids.length) {
+    lista.innerHTML = `<li class="vazia"><p>Sua sacola está vazia.</p><a class="btn btn-lacre" href="#kits" data-fechar>Escolher um kit</a></li>`;
+    return;
+  }
+  lista.innerHTML = ids.map(id => {
+    const k = KITS.find(x => x.id === id);
+    return `<li class="item">
+      <div><div class="nome">${k.nome}</div><div class="sub">${k.num} · ${brl(k.preco)} cada</div></div>
+      <div class="valor">${brl(k.preco * sacola[id])}</div>
+      <div class="qtd-ctrl">
+        <button type="button" data-menos="${id}" aria-label="Diminuir ${k.nome}">−</button>
+        <output aria-label="Quantidade">${sacola[id]}</output>
+        <button type="button" data-mais="${id}" aria-label="Aumentar ${k.nome}">+</button>
+      </div>
+      <button class="remover" type="button" data-remover="${id}">Remover</button>
+    </li>`;
+  }).join('');
+}
+$('#sacola-lista').addEventListener('click', e => {
+  const t = e.target;
+  if (t.dataset.mais) alterar(t.dataset.mais, 1);
+  if (t.dataset.menos) alterar(t.dataset.menos, -1);
+  if (t.dataset.remover) alterar(t.dataset.remover, -Infinity);
+  if (t.hasAttribute('data-fechar')) fecharSacola();
+});
+function abrirSacola() {
+  $('#sacola').classList.add('aberto'); $('#veu').classList.add('aberto');
+  $('#sacola').setAttribute('aria-hidden', 'false');
+  $('#abrir-sacola').setAttribute('aria-expanded', 'true');
+  $('#fechar-sacola').focus();
+}
+function fecharSacola() {
+  $('#sacola').classList.remove('aberto'); $('#veu').classList.remove('aberto');
+  $('#sacola').setAttribute('aria-hidden', 'true');
+  $('#abrir-sacola').setAttribute('aria-expanded', 'false');
+  $('#abrir-sacola').focus();
+}
+$('#abrir-sacola').addEventListener('click', abrirSacola);
+$('#fechar-sacola').addEventListener('click', fecharSacola);
+$('#veu').addEventListener('click', fecharSacola);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#sacola').classList.contains('aberto')) fecharSacola(); });
+$('#finalizar').addEventListener('click', () => {
+  $('#aviso-checkout').textContent = 'Protótipo: o pagamento ainda não está conectado. Na versão final, este botão leva ao checkout.';
+});
+
+/* Menu mobile */
+$('#btn-menu').addEventListener('click', () => {
+  const aberto = $('#nav').classList.toggle('aberto');
+  $('#btn-menu').setAttribute('aria-expanded', aberto);
+  $('#btn-menu').setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+});
+$('#nav').addEventListener('click', e => {
+  if (e.target.tagName === 'A') { $('#nav').classList.remove('aberto'); $('#btn-menu').setAttribute('aria-expanded', 'false'); }
+});
+
+/* Leituras */
+$('#btn-leituras').addEventListener('click', () => {
+  const aberto = $('#leituras').classList.toggle('aberto');
+  $('#btn-leituras').setAttribute('aria-expanded', aberto);
+  $('#btn-leituras').textContent = aberto ? 'Fechar leituras' : 'Ler sobre a tradição';
+});
+
+/* Almanaque */
+$('#form-almanaque').addEventListener('submit', e => {
+  e.preventDefault();
+  const campo = $('#email'), msg = $('#form-msg');
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campo.value.trim());
+  campo.setAttribute('aria-invalid', !ok);
+  msg.classList.toggle('erro', !ok);
+  if (!ok) { msg.textContent = 'Digite um e-mail completo, como nome@email.com.'; campo.focus(); return; }
+  msg.textContent = 'Inscrição feita. A próxima carta chega na lua nova.';
+  campo.value = '';
+});
+
+/* Aviso flutuante */
+let tempoToast;
+function toast(texto) {
+  const t = $('#toast');
+  t.textContent = texto; t.classList.add('ver');
+  clearTimeout(tempoToast);
+  tempoToast = setTimeout(() => t.classList.remove('ver'), 2200);
+}
+
+renderKits();
+renderSacola();
+</script>
+</body>
+</html>
